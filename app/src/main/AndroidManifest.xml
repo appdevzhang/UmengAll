@@ -8,6 +8,9 @@
     <!-- Umeng Update-->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+    <!-- Umeng Analytics-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
 
     <application
         android:name=".app.UmengAllApp"
@@ -44,7 +47,7 @@
         <!-- Umeng APPKEY-->
         <meta-data android:value="55ef91cbe0f55a035e002a9f" android:name="UMENG_APPKEY"/>
         <!-- Umeng Channel-->
-        <!--<meta-data android:value="umengall" android:name="UMENG_CHANNEL"/>-->
+        <meta-data android:value="umengall" android:name="UMENG_CHANNEL"/>
     </application>
 
 </manifest>

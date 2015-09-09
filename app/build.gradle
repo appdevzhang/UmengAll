@@ -32,4 +32,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.0.1'
     compile files('libs/gson-2.2.4.jar')
     compile files('libs/umeng-update-v2.6.0.1.jar')
+    //umeng analytics
+    compile 'com.umeng.analytics:analytics:latest.integration'
 }

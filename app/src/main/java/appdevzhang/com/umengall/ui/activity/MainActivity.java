@@ -3,6 +3,7 @@ package appdevzhang.com.umengall.ui.activity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.umeng.analytics.MobclickAgent;
 import com.umeng.update.UmengUpdateAgent;
 
 import appdevzhang.com.umengall.R;
@@ -15,6 +16,8 @@ public class MainActivity extends BaseActivity {
 //        UmengUpdateAgent.setUpdateOnlyWifi(false);//关闭仅在wifi下更新
 //        UmengUpdateAgent.setUpdateUIStyle(UpdateStatus.STYLE_NOTIFICATION);//以通知的形式提示更新
         UmengUpdateAgent.update(this);
+        MobclickAgent.openActivityDurationTrack(false);
+        MobclickAgent.updateOnlineConfig(this);
 
         setContentView(R.layout.activity_main);
         findViewById(R.id.bt_string_request).setOnClickListener(this);
