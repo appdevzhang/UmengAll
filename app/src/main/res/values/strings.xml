@@ -11,6 +11,7 @@
     <string name="xml_request">XML Request</string>
     <string name="gson_request">Gson Request</string>
     <string name="params_request">Params Request</string>
+    <string name="check_update">Check Update</string>
     <string name="result_clear">Clear</string>
 
 </resources>

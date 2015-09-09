@@ -12,7 +12,8 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        UmengUpdateAgent.setUpdateOnlyWifi(false);//关闭仅在wifi下更新
+//        UmengUpdateAgent.setUpdateOnlyWifi(false);//关闭仅在wifi下更新
+//        UmengUpdateAgent.setUpdateUIStyle(UpdateStatus.STYLE_NOTIFICATION);//以通知的形式提示更新
         UmengUpdateAgent.update(this);
 
         setContentView(R.layout.activity_main);
@@ -24,6 +25,7 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.bt_xml_request).setOnClickListener(this);
         findViewById(R.id.bt_gson_request).setOnClickListener(this);
         findViewById(R.id.bt_params_request).setOnClickListener(this);
+        findViewById(R.id.bt_check_update).setOnClickListener(this);
         findViewById(R.id.bt_request_clear).setOnClickListener(this);
 
     }
@@ -57,6 +59,9 @@ public class MainActivity extends BaseActivity {
                 break;
             case R.id.bt_request_clear:
                 this.finish();
+                break;
+            case R.id.bt_check_update:
+                UmengUpdateAgent.forceUpdate(this);
                 break;
             default:
                 break;

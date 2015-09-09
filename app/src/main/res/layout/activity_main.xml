@@ -51,10 +51,17 @@
         android:layout_width="match_parent"
         android:text="@string/gson_request"
         android:layout_height="40dp" />
+
     <Button
         android:id="@+id/bt_params_request"
         android:layout_width="match_parent"
         android:text="@string/params_request"
+        android:layout_height="40dp" />
+
+    <Button
+        android:id="@+id/bt_check_update"
+        android:layout_width="match_parent"
+        android:text="@string/check_update"
         android:layout_height="40dp" />
 
     <Button
