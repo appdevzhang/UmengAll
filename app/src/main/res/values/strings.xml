@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">UmengAll</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="request_result">Result</string>
+    <string name="string_request">String Request</string>
+    <string name="json_request">Json Request</string>
+    <string name="image_request">Image Request</string>
+    <string name="image_loader">Image Loader</string>
+    <string name="network_imageview">Network ImageView</string>
+    <string name="xml_request">XML Request</string>
+    <string name="gson_request">Gson Request</string>
+    <string name="params_request">Params Request</string>
+    <string name="result_clear">Clear</string>
+
+</resources>

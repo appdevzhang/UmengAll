@@ -1,0 +1,50 @@
+<manifest
+    package="appdevzhang.com.umengall"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionName="1.0"
+    android:versionCode="1">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- Umeng Update-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+
+    <application
+        android:name=".app.UmengAllApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ui.activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.activity.StringRequestActivity"/>
+        <activity android:name=".ui.activity.JsonRequestActivity"/>
+        <activity android:name=".ui.activity.ImageRequestActivity"/>
+        <activity android:name=".ui.activity.ImageLoaderActivity"/>
+        <activity android:name=".ui.activity.NetworkImageViewActivity"/>
+        <activity android:name=".ui.activity.XMLRequestActivity"/>
+        <activity android:name=".ui.activity.GsonRequestActivity"/>
+        <activity android:name=".ui.activity.ParamsRequestActivity"/>
+
+        <!-- Umeng Update-->
+        <service
+            android:name="com.umeng.update.net.DownloadingService"
+            android:process=":DownloadingService" >
+        </service>
+        <activity
+            android:name="com.umeng.update.UpdateDialogActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+
+        <!-- Umeng APPKEY-->
+        <meta-data android:value="55ef91cbe0f55a035e002a9f" android:name="UMENG_APPKEY"/>
+        <!-- Umeng Channel-->
+        <!--<meta-data android:value="umengall" android:name="UMENG_CHANNEL"/>-->
+    </application>
+
+</manifest>
