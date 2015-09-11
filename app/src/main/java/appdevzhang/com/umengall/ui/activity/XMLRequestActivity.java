@@ -16,7 +16,7 @@ import appdevzhang.com.umengall.net.Url;
 import appdevzhang.com.umengall.net.XMLRequest;
 
 /**
- * @ClassName:
+ * @ClassName: XMLRequestActivity
  * @Description:
  * @author: appdevzhang
  * @email: 1160030655@qq.com

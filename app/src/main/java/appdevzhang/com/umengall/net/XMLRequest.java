@@ -14,8 +14,8 @@ import java.io.StringReader;
 import java.io.UnsupportedEncodingException;
 
 /**
- * @ClassName:
- * @Description: XMLRequest
+ * @ClassName: XMLRequest
+ * @Description:
  * @author: appdevzhang
  * @email: 1160030655@qq.com
  * @date: 15/8/27 下午5:52

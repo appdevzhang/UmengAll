@@ -13,9 +13,9 @@ import appdevzhang.com.umengall.net.Url;
 /**
  * @ClassName: ImageLoaderActivity
  * @Description:
- * @author:appdevzhang
- * @email:zhangzhongkai@damaiapp.com
- * @date:15/8/26 下午4:20
+ * @author: appdevzhang
+ * @email: zhangzhongkai@damaiapp.com
+ * @date: 15/8/26 下午4:20
  */
 public class ImageLoaderActivity extends BaseActivity{
     private ImageView ivResult;

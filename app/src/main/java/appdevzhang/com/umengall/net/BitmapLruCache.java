@@ -6,7 +6,7 @@ import android.util.LruCache;
 import com.android.volley.toolbox.ImageLoader;
 
 /**
- * @ClassName: BitmapCache
+ * @ClassName: BitmapLruCache
  * @Description:
  * @author: appdevzhang
  * @email: 1160030655@qq.com

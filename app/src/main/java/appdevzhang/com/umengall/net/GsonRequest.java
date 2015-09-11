@@ -12,7 +12,7 @@ import com.google.gson.Gson;
 import java.io.UnsupportedEncodingException;
 
 /**
- * @ClassName: JsonRequest
+ * @ClassName: GsonRequest
  * @Description:
  * @author: appdevzhang
  * @email: 1160030655@qq.com

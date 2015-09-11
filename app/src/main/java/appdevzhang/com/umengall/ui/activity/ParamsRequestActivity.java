@@ -16,7 +16,7 @@ import appdevzhang.com.umengall.net.ApiParams;
 import appdevzhang.com.umengall.net.Url;
 
 /**
- * @ClassName:
+ * @ClassName: ParamsRequestActivity
  * @Description:
  * @author: appdevzhang
  * @email: 1160030655@qq.com

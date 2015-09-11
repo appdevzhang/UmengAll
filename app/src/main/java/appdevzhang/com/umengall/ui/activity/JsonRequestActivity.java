@@ -15,7 +15,7 @@ import appdevzhang.com.umengall.R;
 import appdevzhang.com.umengall.net.Url;
 
 /**
- * @ClassName:
+ * @ClassName: JsonRequestActivity
  * @Description:
  * @author: appdevzhang
  * @email: 1160030655@qq.com

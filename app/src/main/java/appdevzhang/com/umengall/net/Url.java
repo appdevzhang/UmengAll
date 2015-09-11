@@ -3,7 +3,7 @@ package appdevzhang.com.umengall.net;
 import java.io.Serializable;
 
 /**
- * @ClassName:
+ * @ClassName: Url
  * @Description:
  * @author: appdevzhang
  * @email: 1160030655@qq.com
