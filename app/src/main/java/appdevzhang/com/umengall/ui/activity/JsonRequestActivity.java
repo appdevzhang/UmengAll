@@ -1,8 +1,6 @@
 package appdevzhang.com.umengall.ui.activity;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -14,6 +12,9 @@ import org.json.JSONObject;
 import appdevzhang.com.umengall.R;
 import appdevzhang.com.umengall.net.Url;
 import appdevzhang.com.umengall.ui.activity.base.BaseActivity;
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * @ClassName: JsonRequestActivity
@@ -24,29 +25,16 @@ import appdevzhang.com.umengall.ui.activity.base.BaseActivity;
  */
 public class JsonRequestActivity extends BaseActivity {
 
-    private Button btJsonRequest;
-    private TextView tvResult;
+    @OnClick(R.id.bt_json_request) void doRequest(){
+        executeRequest(new JsonObjectRequest(Request.Method.GET, Url.JSONREQUESTURL,null,listener(),errorListener()));
+    };
+    @Bind(R.id.tv_request_result) TextView tvResult;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_json_request);
-        btJsonRequest = (Button) findViewById(R.id.bt_json_request);
-        btJsonRequest.setOnClickListener(this);
-        tvResult = (TextView) findViewById(R.id.tv_request_result);
 
-    }
-
-    @Override
-    public void onClick(View v) {
-        super.onClick(v);
-        switch (v.getId()){
-            case R.id.bt_json_request:
-                executeRequest(new JsonObjectRequest(Request.Method.GET, Url.JSONREQUESTURL,null,listener(),errorListener()));
-                break;
-            default:
-                break;
-        }
-
+        ButterKnife.bind(this);
     }
 
     private Response.Listener<JSONObject> listener(){

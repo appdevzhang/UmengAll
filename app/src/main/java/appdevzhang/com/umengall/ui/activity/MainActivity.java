@@ -22,7 +22,7 @@ public class MainActivity extends BaseActivity {
         NextPage(ImageRequestActivity.class,false);
     };
     @OnClick(R.id.bt_image_loader) void goImageLoader(){
-        NextPage(StringRequestActivity.class,false);
+        NextPage(ImageLoaderActivity.class,false);
     };
     @OnClick(R.id.bt_network_imageview) void goNetworkImageview(){
         NextPage(NetworkImageViewActivity.class,false);

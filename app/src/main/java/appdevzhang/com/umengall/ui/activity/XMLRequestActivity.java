@@ -1,7 +1,6 @@
 package appdevzhang.com.umengall.ui.activity;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 
 import com.android.volley.Response;
@@ -15,6 +14,9 @@ import appdevzhang.com.umengall.R;
 import appdevzhang.com.umengall.net.Url;
 import appdevzhang.com.umengall.net.XMLRequest;
 import appdevzhang.com.umengall.ui.activity.base.BaseActivity;
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * @ClassName: XMLRequestActivity
@@ -24,27 +26,17 @@ import appdevzhang.com.umengall.ui.activity.base.BaseActivity;
  * @date: 15/8/27 下午11:03
  */
 public class XMLRequestActivity extends BaseActivity {
-    private TextView tvResult;
+    @Bind(R.id.tv_request_result) TextView tvResult;
+    @OnClick(R.id.bt_xml_request) void doRequest(){
+        executeRequest(new XMLRequest(Url.XMLREQUESTURL, listener(), errorListener()));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_xml_request);
-        findViewById(R.id.bt_xml_request).setOnClickListener(this);
-        tvResult = (TextView) findViewById(R.id.tv_request_result);
 
-    }
-
-    @Override
-    public void onClick(View v) {
-        super.onClick(v);
-        switch (v.getId()) {
-            case R.id.bt_xml_request:
-                executeRequest(new XMLRequest(Url.XMLREQUESTURL, listener(), errorListener()));
-                break;
-            default:
-                break;
-        }
+        ButterKnife.bind(this);
     }
 
     protected Response.Listener<XmlPullParser> listener() {

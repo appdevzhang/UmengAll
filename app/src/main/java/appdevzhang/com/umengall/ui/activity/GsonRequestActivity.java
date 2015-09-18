@@ -22,7 +22,7 @@ import butterknife.OnClick;
  * @date: 15/8/28 上午10:48
  */
 public class GsonRequestActivity extends BaseActivity {
-    @Bind(R.id.tv_request_result) private TextView tvResult;
+    @Bind(R.id.tv_request_result) TextView tvResult;
     @OnClick(R.id.bt_gson_request) void doRequest(){
         executeRequest(new GsonRequest<Wheather>(Url.JSONREQUESTURL, Wheather.class, listener(), errorListener()));
     }

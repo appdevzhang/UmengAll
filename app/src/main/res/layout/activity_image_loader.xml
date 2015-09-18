@@ -8,7 +8,7 @@
         android:id="@+id/bt_image_loader"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:text="@string/image_request" />
+        android:text="@string/image_loader" />
 
     <ScrollView
         android:layout_width="match_parent"

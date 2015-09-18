@@ -23,7 +23,7 @@ import butterknife.OnClick;
  */
 public class StringRequestActivity extends BaseActivity {
 
-    @Bind(R.id.tv_request_result) private TextView tvResult;
+    @Bind(R.id.tv_request_result) TextView tvResult;
     @OnClick(R.id.bt_string_request) void doRequest(){
         executeRequest(new StringRequest(Request.Method.GET, Url.STRINGREQUESTURL, listener(), errorListener()));
 
