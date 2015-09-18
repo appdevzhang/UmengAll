@@ -9,6 +9,7 @@ import com.android.volley.toolbox.ImageLoader;
 import appdevzhang.com.umengall.R;
 import appdevzhang.com.umengall.net.RequestManager;
 import appdevzhang.com.umengall.net.Url;
+import appdevzhang.com.umengall.ui.activity.base.BaseActivity;
 
 /**
  * @ClassName: ImageLoaderActivity
@@ -17,7 +18,7 @@ import appdevzhang.com.umengall.net.Url;
  * @email: zhangzhongkai@damaiapp.com
  * @date: 15/8/26 下午4:20
  */
-public class ImageLoaderActivity extends BaseActivity{
+public class ImageLoaderActivity extends BaseActivity {
     private ImageView ivResult;
     private ImageLoader imageLoader;
     private ImageLoader.ImageListener imageListener;

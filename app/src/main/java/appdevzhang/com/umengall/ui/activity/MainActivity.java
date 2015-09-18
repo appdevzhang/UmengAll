@@ -1,15 +1,47 @@
 package appdevzhang.com.umengall.ui.activity;
 
 import android.os.Bundle;
-import android.view.View;
 
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.message.PushAgent;
 import com.umeng.update.UmengUpdateAgent;
 
 import appdevzhang.com.umengall.R;
+import appdevzhang.com.umengall.ui.activity.base.BaseActivity;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MainActivity extends BaseActivity {
+    @OnClick(R.id.bt_string_request) void goString(){
+        NextPage(StringRequestActivity.class,false);
+    };
+    @OnClick(R.id.bt_json_request) void goJson(){
+        NextPage(JsonRequestActivity.class,false);
+    };
+    @OnClick(R.id.bt_image_request) void goImageRequest(){
+        NextPage(ImageRequestActivity.class,false);
+    };
+    @OnClick(R.id.bt_image_loader) void goImageLoader(){
+        NextPage(StringRequestActivity.class,false);
+    };
+    @OnClick(R.id.bt_network_imageview) void goNetworkImageview(){
+        NextPage(NetworkImageViewActivity.class,false);
+    };
+    @OnClick(R.id.bt_xml_request) void goXML(){
+        NextPage(XMLRequestActivity.class, false);
+    };
+    @OnClick(R.id.bt_gson_request) void goGson(){
+        NextPage(GsonRequestActivity.class, false);
+    };
+    @OnClick(R.id.bt_params_request) void nextPage(){
+        NextPage(ParamsRequestActivity.class, false);
+    };
+    @OnClick(R.id.bt_check_update) void checkUpdate(){
+        UmengUpdateAgent.forceUpdate(this);
+    };
+    @OnClick(R.id.bt_request_clear) void clear(){
+        this.finish();
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,54 +60,9 @@ public class MainActivity extends BaseActivity {
 //        mPushAgent.isEnabled();//查询通知开启状态
 
         setContentView(R.layout.activity_main);
-        findViewById(R.id.bt_string_request).setOnClickListener(this);
-        findViewById(R.id.bt_json_request).setOnClickListener(this);
-        findViewById(R.id.bt_image_request).setOnClickListener(this);
-        findViewById(R.id.bt_image_loader).setOnClickListener(this);
-        findViewById(R.id.bt_network_imageview).setOnClickListener(this);
-        findViewById(R.id.bt_xml_request).setOnClickListener(this);
-        findViewById(R.id.bt_gson_request).setOnClickListener(this);
-        findViewById(R.id.bt_params_request).setOnClickListener(this);
-        findViewById(R.id.bt_check_update).setOnClickListener(this);
-        findViewById(R.id.bt_request_clear).setOnClickListener(this);
 
-    }
+        ButterKnife.bind(this);
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.bt_string_request:
-                NextPage(StringRequestActivity.class,false);
-                break;
-            case R.id.bt_json_request:
-                NextPage(JsonRequestActivity.class,false);
-                break;
-            case R.id.bt_image_request:
-                NextPage(ImageRequestActivity.class,false);
-                break;
-            case R.id.bt_image_loader:
-                NextPage(ImageLoaderActivity.class,false);
-                break;
-            case R.id.bt_network_imageview:
-                NextPage(NetworkImageViewActivity.class,false);
-                break;
-            case R.id.bt_xml_request:
-                NextPage(XMLRequestActivity.class,false);
-                break;
-            case R.id.bt_gson_request:
-                NextPage(GsonRequestActivity.class,false);
-                break;
-            case R.id.bt_params_request:
-                NextPage(ParamsRequestActivity.class,false);
-                break;
-            case R.id.bt_request_clear:
-                this.finish();
-                break;
-            case R.id.bt_check_update:
-                UmengUpdateAgent.forceUpdate(this);
-                break;
-            default:
-                break;
-        }
+
     }
 }

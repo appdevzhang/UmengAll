@@ -38,4 +38,6 @@ dependencies {
     //umeng message
     compile 'com.android.support:support-v4:23.0.1'
     compile files('libs/com.umeng.message.lib_v2.4.1.jar')
+    //view inject
+    compile 'com.jakewharton:butterknife:7.0.1'
 }

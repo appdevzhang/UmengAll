@@ -1,4 +1,4 @@
-package appdevzhang.com.umengall.ui.activity;
+package appdevzhang.com.umengall.ui.activity.base;
 
 import android.app.Activity;
 import android.content.Intent;

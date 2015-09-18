@@ -9,6 +9,7 @@ import com.android.volley.toolbox.NetworkImageView;
 import appdevzhang.com.umengall.R;
 import appdevzhang.com.umengall.net.RequestManager;
 import appdevzhang.com.umengall.net.Url;
+import appdevzhang.com.umengall.ui.activity.base.BaseActivity;
 
 /**
  * @ClassName: NetworkImageViewActivity
@@ -17,7 +18,7 @@ import appdevzhang.com.umengall.net.Url;
  * @email: 1160030655@qq.com
  * @date: 15/8/27 下午5:20
  */
-public class NetworkImageViewActivity extends BaseActivity{
+public class NetworkImageViewActivity extends BaseActivity {
     private NetworkImageView networkImageView;
     private ImageLoader imageLoader;
     @Override

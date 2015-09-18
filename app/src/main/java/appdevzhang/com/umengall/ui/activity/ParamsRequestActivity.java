@@ -14,6 +14,7 @@ import java.util.Map;
 import appdevzhang.com.umengall.R;
 import appdevzhang.com.umengall.net.ApiParams;
 import appdevzhang.com.umengall.net.Url;
+import appdevzhang.com.umengall.ui.activity.base.BaseActivity;
 
 /**
  * @ClassName: ParamsRequestActivity
