@@ -36,6 +36,9 @@ public class MainActivity extends BaseActivity {
     @OnClick(R.id.bt_params_request) void nextPage(){
         NextPage(ParamsRequestActivity.class, false);
     };
+    @OnClick(R.id.bt_convenient_banner) void goBanner(){
+//        NextPage(ConvenientBanner.class, false);
+    }
     @OnClick(R.id.bt_check_update) void checkUpdate(){
         UmengUpdateAgent.forceUpdate(this);
     };
