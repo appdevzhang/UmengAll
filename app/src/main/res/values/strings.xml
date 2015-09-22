@@ -13,6 +13,7 @@
     <string name="params_request">Params Request</string>
     <string name="convenient_banner">Convenient Banner</string>
     <string name="check_update">Check Update</string>
+    <string name="umeng_share">Umeng Share</string>
     <string name="result_clear">Clear</string>
 
 </resources>
