@@ -44,5 +44,5 @@ dependencies {
     //convenientbanner
     //    compile project(':convenientbanner')
     //umeng social share
-    compile project(':social_sdk_library_project')
+    compile project(':libmodules/social_sdk_library_project')
 }

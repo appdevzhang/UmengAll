@@ -1,1 +1,1 @@
-include ':app',':social_sdk_library_project'
+include ':app',':libmodules/social_sdk_library_project'
