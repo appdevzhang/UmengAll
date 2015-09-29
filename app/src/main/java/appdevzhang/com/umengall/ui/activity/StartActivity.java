@@ -15,7 +15,7 @@ import appdevzhang.com.umengall.ui.activity.base.BaseActivity;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends BaseActivity {
+public class StartActivity extends BaseActivity {
     // 首先在您的Activity中添加如下成员变量
     final UMSocialService mController = UMServiceFactory.getUMSocialService("com.umeng.share");
     @OnClick(R.id.bt_string_request)

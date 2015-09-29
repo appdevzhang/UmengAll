@@ -37,10 +37,12 @@ dependencies {
     //umeng analytics
     compile 'com.umeng.analytics:analytics:latest.integration'
     //umeng message
-//    compile 'com.android.support:support-v4:23.0.1'
+    compile 'com.android.support:support-v4:23.0.1'
     compile files('libs/com.umeng.message.lib_v2.4.1.jar')
     //view inject
     compile 'com.jakewharton:butterknife:7.0.1'
     //umeng social share
     compile project(':social_sdk_library_project')
+    //convenientbanner
+    compile project(':convenientbanner')
 }
