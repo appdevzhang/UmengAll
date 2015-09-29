@@ -1,10 +1,10 @@
-package com.bigkoo.convenientbanner;
+package com.appdevzhang.convenientbanner;
 
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.bigkoo.convenientbanner.salvage.RecyclingPagerAdapter;
+import com.appdevzhang.convenientbanner.salvage.RecyclingPagerAdapter;
 
 import java.util.List;
 

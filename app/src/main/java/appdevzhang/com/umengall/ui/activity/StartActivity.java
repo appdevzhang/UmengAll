@@ -95,7 +95,7 @@ public class StartActivity extends BaseActivity {
 //        mPushAgent.disable();//关闭客户端的通知服务
 //        mPushAgent.isEnabled();//查询通知开启状态
 
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_start);
         ButterKnife.bind(this);
         com.umeng.socialize.utils.Log.LOG = true;
         initUmengShare();

@@ -1,4 +1,4 @@
-package com.bigkoo.convenientbanner.salvage;
+package com.appdevzhang.convenientbanner.salvage;
 
 import android.support.v4.view.PagerAdapter;
 import android.view.View;

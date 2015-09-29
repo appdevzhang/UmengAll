@@ -1,4 +1,4 @@
-package com.bigkoo.convenientbanner;
+package com.appdevzhang.convenientbanner;
 /**
  * @ClassName :  ViewHolderCreator 
  * @Description : 

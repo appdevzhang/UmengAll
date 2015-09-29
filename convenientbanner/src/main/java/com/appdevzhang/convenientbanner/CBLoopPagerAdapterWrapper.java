@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.bigkoo.convenientbanner;
+package com.appdevzhang.convenientbanner;
 
 import android.os.Parcelable;
 import android.support.v4.app.FragmentPagerAdapter;

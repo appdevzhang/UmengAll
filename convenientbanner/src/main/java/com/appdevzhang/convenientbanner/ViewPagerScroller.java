@@ -1,4 +1,4 @@
-package com.bigkoo.convenientbanner;
+package com.appdevzhang.convenientbanner;
 
 import android.content.Context;
 import android.view.animation.Interpolator;
