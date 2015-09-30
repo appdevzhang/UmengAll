@@ -1,120 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="appdevzhang.com.umengall"
-    android:versionCode="1"
-    android:versionName="1.0" >
+<manifest package="appdevzhang.com.umengall"
+          xmlns:android="http://schemas.android.com/apk/res/android"
+          android:versionCode="1"
+          android:versionName="1.0">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
     <!-- Umeng Update -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <!-- Umeng Analytics -->
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <!-- Umeng Message -->
     <!-- 必选 -->
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <!-- 【必选】用以设置前台是否显示通知 -->
-    <uses-permission android:name="android.permission.REAL_GET_TASKS" />
+    <uses-permission android:name="android.permission.REAL_GET_TASKS"/>
     <!-- 可选 -->
-    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_ADDED" />
-    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_CHANGED" />
-    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_INSTALL" />
-    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_REPLACED" />
-    <uses-permission android:name="android.permission.REAL_RESTART_PACKAGES" />
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-;
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_ADDED"/>
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_CHANGED"/>
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_INSTALL"/>
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_REPLACED"/>
+    <uses-permission android:name="android.permission.REAL_RESTART_PACKAGES"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    ;
     <application
         android:name=".app.UmengAllApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
-        <activity android:name=".ui.activity.StartActivity" >
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".ui.activity.StartActivity"
+            android:theme="@style/Anim_fade">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.StringRequestActivity" />
-        <activity android:name=".ui.activity.JsonRequestActivity" />
-        <activity android:name=".ui.activity.ImageRequestActivity" />
-        <activity android:name=".ui.activity.ImageLoaderActivity" />
-        <activity android:name=".ui.activity.NetworkImageViewActivity" />
-        <activity android:name=".ui.activity.XMLRequestActivity" />
-        <activity android:name=".ui.activity.GsonRequestActivity" />
-        <activity android:name=".ui.activity.ParamsRequestActivity" />
+        <activity android:name=".ui.activity.StringRequestActivity" android:theme="@style/Anim_fade"/>
+        <activity android:name=".ui.activity.JsonRequestActivity" android:theme="@style/Anim_fade"/>
+        <activity android:name=".ui.activity.ImageRequestActivity" android:theme="@style/Anim_fade"/>
+        <activity android:name=".ui.activity.ImageLoaderActivity" android:theme="@style/Anim_fade"/>
+        <activity android:name=".ui.activity.NetworkImageViewActivity" android:theme="@style/Anim_fade"/>
+        <activity android:name=".ui.activity.XMLRequestActivity" android:theme="@style/Anim_fade"/>
+        <activity android:name=".ui.activity.GsonRequestActivity" android:theme="@style/Anim_fade"/>
+        <activity android:name=".ui.activity.ParamsRequestActivity" android:theme="@style/Anim_fade"/>
+        <activity android:name=".ui.activity.ConvenientBannerActivity" android:theme="@style/Anim_fade"/>
 
         <!-- Umeng update -->
         <service
             android:name="com.umeng.update.net.DownloadingService"
-            android:process=":DownloadingService" >
+            android:process=":DownloadingService">
         </service>
 
         <activity
             android:name="com.umeng.update.UpdateDialogActivity"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
         </activity>
 
         <!-- Umeng message -->
         <!-- 监听通知点击或者忽略处理的广播 -->
         <receiver
             android:name="com.umeng.message.NotificationProxyBroadcastReceiver"
-            android:exported="false" >
+            android:exported="false">
         </receiver>
         <!-- 监听开机运行、网络连接变化、卸载的广播 -->
         <receiver
             android:name="com.umeng.message.SystemReceiver"
-            android:process=":push" >
+            android:process=":push">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
             <intent-filter>
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
             </intent-filter>
             <intent-filter>
-                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
 
-                <data android:scheme="package" />
+                <data android:scheme="package"/>
             </intent-filter>
         </receiver>
         <!-- 监听消息到达的广播 -->
         <receiver
             android:name="com.umeng.message.MessageReceiver"
             android:exported="false"
-            android:process=":push" >
+            android:process=":push">
             <intent-filter>
-                <action android:name="org.agoo.android.intent.action.RECEIVE" />
+                <action android:name="org.agoo.android.intent.action.RECEIVE"/>
             </intent-filter>
         </receiver>
         <!-- 监听宿主选举的广播 -->
         <receiver
             android:name="com.umeng.message.ElectionReceiver"
-            android:process=":push" >
+            android:process=":push">
             <intent-filter>
-                <action android:name="org.agoo.android.intent.action.ELECTION_RESULT_V4" />
+                <action android:name="org.agoo.android.intent.action.ELECTION_RESULT_V4"/>
 
-                <category android:name="umeng" />
+                <category android:name="umeng"/>
             </intent-filter>
         </receiver>
         <!-- 监听注册的广播 -->
         <receiver
             android:name="com.umeng.message.RegistrationReceiver"
-            android:exported="false" >
+            android:exported="false">
             <intent-filter>
-                <action android:name="appdevzhang.com.umengall.intent.action.COMMAND" />
+                <action android:name="appdevzhang.com.umengall.intent.action.COMMAND"/>
             </intent-filter>
         </receiver>
-        <receiver android:name="com.umeng.message.UmengMessageBootReceiver" >
+        <receiver android:name="com.umeng.message.UmengMessageBootReceiver">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
         </receiver>
         <!-- Umeng的长连服务，用来建立推送的长连接的 -->
@@ -122,55 +124,55 @@
             android:name="com.umeng.message.UmengService"
             android:exported="true"
             android:label="PushService"
-            android:process=":push" >
+            android:process=":push">
             <intent-filter>
-                <action android:name="appdevzhang.com.umengall.intent.action.START" />
+                <action android:name="appdevzhang.com.umengall.intent.action.START"/>
             </intent-filter>
             <intent-filter>
-                <action android:name="appdevzhang.com.umengall.intent.action.COCKROACH" />
+                <action android:name="appdevzhang.com.umengall.intent.action.COCKROACH"/>
             </intent-filter>
             <intent-filter>
-                <action android:name="org.agoo.android.intent.action.PING_V4" />
+                <action android:name="org.agoo.android.intent.action.PING_V4"/>
 
-                <category android:name="umeng" />
+                <category android:name="umeng"/>
             </intent-filter>
         </service>
 
         <!-- Umeng的消息接收服务 -->
         <service
             android:name="com.umeng.message.UmengIntentService"
-            android:process=":push" />
+            android:process=":push"/>
         <!-- Umeng的消息路由服务 -->
         <service
             android:name="com.umeng.message.UmengMessageIntentReceiverService"
             android:exported="true"
-            android:process=":push" >
+            android:process=":push">
             <intent-filter>
-                <action android:name="org.android.agoo.client.MessageReceiverService" />
+                <action android:name="org.android.agoo.client.MessageReceiverService"/>
             </intent-filter>
             <intent-filter>
-                <action android:name="org.android.agoo.client.ElectionReceiverService" />
+                <action android:name="org.android.agoo.client.ElectionReceiverService"/>
             </intent-filter>
         </service>
         <!-- v2.4.1添加的Service，Umeng的消息接收后的处理服务 -->
         <service
             android:name="com.umeng.message.UmengMessageCallbackHandlerService"
-            android:exported="false" >
+            android:exported="false">
             <intent-filter>
-                <action android:name="com.umeng.messge.registercallback.action" />
+                <action android:name="com.umeng.messge.registercallback.action"/>
             </intent-filter>
             <intent-filter>
-                <action android:name="com.umeng.message.unregistercallback.action" />
+                <action android:name="com.umeng.message.unregistercallback.action"/>
             </intent-filter>
             <intent-filter>
-                <action android:name="com.umeng.message.message.handler.action" />
+                <action android:name="com.umeng.message.message.handler.action"/>
             </intent-filter>
             <intent-filter>
-                <action android:name="com.umeng.message.autoupdate.handler.action" />
+                <action android:name="com.umeng.message.autoupdate.handler.action"/>
             </intent-filter>
         </service>
         <!-- V1.3.0添加的service，负责下载通知的资源 -->
-        <service android:name="com.umeng.message.UmengDownloadResourceService" />
+        <service android:name="com.umeng.message.UmengDownloadResourceService"/>
 
         <!-- Umeng Share -->
         <!-- ###################注册SDK使用的Activity###################### -->
@@ -181,44 +183,42 @@
             android:launchMode="singleTask"
             android:noHistory="true"
             android:theme="@style/Theme.UMDialog"
-            android:windowSoftInputMode="stateVisible|adjustResize" >
+            android:windowSoftInputMode="stateVisible|adjustResize">
         </activity>
         <!-- ############ QQ空间和QQ SSO授权的Activity注册 ############ -->
         <activity
             android:name="com.tencent.tauth.AuthActivity"
             android:launchMode="singleTask"
-            android:noHistory="true" >
+            android:noHistory="true">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.VIEW"/>
 
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
                 <!-- 100424468，如果你使用的公用账号，则不需要修改；否则修改成你在QQ开放平台申请的 APP ID -->
-                <data android:scheme="tencent100424468" />
+                <data android:scheme="tencent100424468"/>
             </intent-filter>
         </activity>
         <activity
             android:name="com.tencent.connect.common.AssistActivity"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
         </activity>
 
         <!-- Umeng APPKEY -->
         <meta-data
             android:name="UMENG_APPKEY"
-            android:value="55ef91cbe0f55a035e002a9f" />
+            android:value="55ef91cbe0f55a035e002a9f"/>
         <!-- Umeng Message Secret -->
         <meta-data
             android:name="UMENG_MESSAGE_SECRET"
-            android:value="3ea33a1451204c27c7e694a0cd6e804d" >
+            android:value="3ea33a1451204c27c7e694a0cd6e804d">
         </meta-data>
         <!-- Umeng Channel -->
         <meta-data
             android:name="UMENG_CHANNEL"
-            android:value="umengall" />
+            android:value="umengall"/>
 
-        <activity android:name=".ui.activity.ConvenientBannerActivity" >
-        </activity>
     </application>
 
 </manifest>

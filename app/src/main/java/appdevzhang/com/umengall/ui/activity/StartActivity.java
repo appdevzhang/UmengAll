@@ -60,7 +60,7 @@ public class StartActivity extends BaseActivity {
 
     @OnClick(R.id.bt_convenient_banner)
     void goBanner() {
-//        NextPage(ConvenientBanner.class, false);
+        NextPage(ConvenientBannerActivity.class, false);
     }
 
     @OnClick(R.id.bt_check_update)
