@@ -49,7 +49,7 @@ public class ImageRequestActivity extends BaseActivity {
         return new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError volleyError) {
-                ivResult.setImageResource(R.mipmap.ic_launcher);
+                ivResult.setImageResource(R.drawable.ic_default_adimage);
             }
         };
     }

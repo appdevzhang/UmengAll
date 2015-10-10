@@ -12,11 +12,12 @@ import com.appdevzhang.convenientbanner.ConvenientBanner.Transformer;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import appdevzhang.com.umengall.R;
 import appdevzhang.com.umengall.ui.activity.base.BaseActivity;
-import appdevzhang.com.umengall.ui.view.LocalImageHolderView;
+import appdevzhang.com.umengall.ui.view.NetworkImageHolderView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnItemClick;
@@ -63,16 +64,32 @@ public class ConvenientBannerActivity extends BaseActivity {
 
     private void initBanner(){
         loadTestDatas();
-        convenientBanner.setPages(new CBViewHolderCreator<LocalImageHolderView>() {
+        //使用本地图片
+//        convenientBanner.setPages(new CBViewHolderCreator<LocalImageHolderView>() {
+//            @Override
+//            public LocalImageHolderView createHolder() {
+//                return new LocalImageHolderView();
+//            }
+//        }, localImages);
+
+        //获取网络图片
+        networkImages = Arrays.asList(images);
+        convenientBanner.setPages(new CBViewHolderCreator<NetworkImageHolderView>() {
             @Override
-            public LocalImageHolderView createHolder() {
-                return new LocalImageHolderView();
+            public NetworkImageHolderView createHolder() {
+                return new NetworkImageHolderView();
             }
-        }, localImages);
-        //设置两个点图片作为翻页指示器，不设置则没有指示器，可以根据自己需求自行配合自己的指示器,不需要圆点指示器可用不设
-        convenientBanner.setPageIndicator(new int[]{R.mipmap.ic_page_indicator, R.mipmap.ic_page_indicator_focused});
+        },networkImages);
+
+        //设置两个点图片作为翻页指示器，不设置则没有指示器，可以根据自己需求自行配合自己的指示器,不需要圆点指示器可以不设
+        convenientBanner.setPageIndicator(new int[]{R.drawable.ic_page_indicator, R.drawable.ic_page_indicator_focused});
         //设置翻页的效果，不需要翻页效果可用不设
         convenientBanner.setPageTransformer(Transformer.DefaultTransformer);
+
+        //设置不能手动影响
+//        convenientBanner.setManualPageable(false);
+
+
     }
 
     /*

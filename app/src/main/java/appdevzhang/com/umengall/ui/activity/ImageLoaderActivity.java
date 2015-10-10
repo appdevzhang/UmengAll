@@ -17,7 +17,7 @@ import butterknife.OnClick;
  * @ClassName: ImageLoaderActivity
  * @Description:
  * @author: appdevzhang
- * @email: zhangzhongkai@damaiapp.com
+ * @email: 1160030655@qq.com
  * @date: 15/8/26 下午4:20
  */
 public class ImageLoaderActivity extends BaseActivity {
@@ -34,7 +34,7 @@ public class ImageLoaderActivity extends BaseActivity {
 
         ButterKnife.bind(this);
         imageLoader = RequestManager.getImageLoader();
-        imageListener = ImageLoader.getImageListener(ivResult,R.mipmap.ic_launcher,R.mipmap.ic_launcher);
+        imageListener = ImageLoader.getImageListener(ivResult,R.drawable.ic_default_adimage,R.mipmap.ic_launcher);
     }
 
 }

@@ -22,7 +22,7 @@ import butterknife.OnClick;
 public class NetworkImageViewActivity extends BaseActivity {
     private NetworkImageView networkImageView;
     @OnClick(R.id.bt_network_imageview) void doRequest(){
-        networkImageView.setDefaultImageResId(R.mipmap.ic_launcher);
+        networkImageView.setDefaultImageResId(R.drawable.ic_default_adimage);
         networkImageView.setErrorImageResId(R.mipmap.ic_launcher);
         networkImageView.setImageUrl(Url.IMAGEREQUESTURL,imageLoader);
     };
