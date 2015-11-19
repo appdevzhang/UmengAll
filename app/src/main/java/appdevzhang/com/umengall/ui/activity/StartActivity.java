@@ -8,7 +8,6 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
@@ -18,8 +17,8 @@ import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
+import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.appdevzhang.convenientbanner.transforms.StackTransformer;
 
@@ -34,6 +33,7 @@ public class StartActivity extends BaseActivity implements ViewPager.OnPageChang
 
     private Context mContext;
     public static int screenW, screenH;
+    private Button mStart;
 
     private static final int VIEW_NO_1 = 0;
     private static final int VIEW_NO_2 = 1;
@@ -86,6 +86,8 @@ public class StartActivity extends BaseActivity implements ViewPager.OnPageChang
         View view2 = inflater.inflate(R.layout.fragment_guide_page_3, null, false);
         View view3 = inflater.inflate(R.layout.fragment_guide_page_4, null, false);
         View view4 = inflater.inflate(R.layout.fragment_guide_page_5, null, false);
+        mStart = (Button) view4.findViewById(R.id.bt_start);
+        mStart.setOnClickListener(this);
 
 
         list.add(view0);
@@ -102,6 +104,17 @@ public class StartActivity extends BaseActivity implements ViewPager.OnPageChang
         mPager.setPageTransformer(true, new StackTransformer());
 
         animal(VIEW_NO_1);
+    }
+
+    @Override
+    public void onClick(View v) {
+        super.onClick(v);
+        switch (v.getId()){
+            case R.id.bt_start:
+                NextPage(HomeActivity.class, true);
+                break;
+        }
+
     }
 
     @Override
@@ -235,48 +248,6 @@ public class StartActivity extends BaseActivity implements ViewPager.OnPageChang
         }
     }
 
-    View.OnTouchListener mOnTouchListener = new View.OnTouchListener() {
-
-        @Override
-        public boolean onTouch(View v, MotionEvent event) {
-            if (preIndex == 4) {
-                switch (event.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                        x1 = (int) event.getX();
-                        Toast.makeText(StartActivity.this, "X1--->" + x1,
-                                Toast.LENGTH_SHORT).show();
-                        break;
-                    case MotionEvent.ACTION_MOVE:
-
-                        x2 = (int) event.getX();
-                        Toast.makeText(StartActivity.this, "X2--->" + x2,
-                                Toast.LENGTH_SHORT).show();
-                        if ((x2 - x1) < 0) {
-                            finish();
-                        }
-
-                        // Toast.makeText(MainActivity.this, "<--->" + (int)
-                        // event.getX(), Toast.LENGTH_SHORT).show() ;
-                        break;
-                    case MotionEvent.ACTION_UP:
-                        x2 = (int) event.getX();
-                        Toast.makeText(StartActivity.this, "X2--->" + x2,
-                                Toast.LENGTH_SHORT).show();
-                        if ((x2 - x1) < 0) {
-                            finish();
-                        }
-                        break;
-                    default:
-                        break;
-                }
-            }
-            return true;
-        }
-    };
-
-    int x1 = 0, x2 = 0;
-
-
     public class GuideViewPagerAdapter extends PagerAdapter {
         private List<View> mListViews;
 
@@ -353,7 +324,7 @@ public class StartActivity extends BaseActivity implements ViewPager.OnPageChang
                     break;
                 case VIEW_NO_2:
                     mTwoCar = (ImageView) view.findViewById(R.id.two_car);
-                    mTwoCar.setBackgroundResource(R.anim.guide_two_car_frame_anim);
+                    mTwoCar.setBackgroundResource(R.drawable.guide_two_car_frame_anim);
                     view.setBackgroundDrawable(
                             ImageCompress.getInstance().getCompressFromId(mContext, R.drawable.guide_two_bg, screenW, screenH));
                     break;
@@ -368,7 +339,7 @@ public class StartActivity extends BaseActivity implements ViewPager.OnPageChang
                 case VIEW_NO_4:
                     mFourCoinPack = (ImageView) view.findViewById(R.id.four_pack);
                     mFourCoin = (ImageView) view.findViewById(R.id.four_coin);
-                    mFourCoin.setBackgroundResource(R.anim.guide_four_coin_frame_anim);
+                    mFourCoin.setBackgroundResource(R.drawable.guide_four_coin_frame_anim);
                     mFourPig = (ImageView) view.findViewById(R.id.four_pig);
                     mFourPigShadow = (ImageView) view.findViewById(R.id.four_pig_shadow);
                     view.setBackgroundDrawable(
@@ -379,7 +350,7 @@ public class StartActivity extends BaseActivity implements ViewPager.OnPageChang
                     mFiveCarShadow = (ImageView) view.findViewById(R.id.five_car_shadow);
                     mFiveCloudFast = (ImageView) view.findViewById(R.id.five_cloud_fast);
                     mFiveCloudSlow = (ImageView) view.findViewById(R.id.five_cloud_slow);
-                    view.setOnTouchListener(mOnTouchListener);
+//                    view.setOnTouchListener(mOnTouchListener);
                     view.setBackgroundDrawable(
                             ImageCompress.getInstance().getCompressFromId(mContext, R.drawable.guide_five_bg, screenW, screenH));
                     break;
@@ -400,4 +371,47 @@ public class StartActivity extends BaseActivity implements ViewPager.OnPageChang
             return arg0 == arg1;// 官方提示这样写
         }
     }
+    /*
+    View.OnTouchListener mOnTouchListener = new View.OnTouchListener() {
+
+        @Override
+        public boolean onTouch(View v, MotionEvent event) {
+            if (preIndex == 4) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        x1 = (int) event.getX();
+                        Toast.makeText(StartActivity.this, "X1--->" + x1,
+                                Toast.LENGTH_SHORT).show();
+                        break;
+                    case MotionEvent.ACTION_MOVE:
+
+                        x2 = (int) event.getX();
+                        Toast.makeText(StartActivity.this, "X2--->" + x2,
+                                Toast.LENGTH_SHORT).show();
+//                        if ((x2 - x1) < 0) {
+//                            finish();
+//                        }
+
+                        // Toast.makeText(MainActivity.this, "<--->" + (int)
+                        // event.getX(), Toast.LENGTH_SHORT).show() ;
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        x2 = (int) event.getX();
+                        Toast.makeText(StartActivity.this, "X2--->" + x2,
+                                Toast.LENGTH_SHORT).show();
+//                        if ((x2 - x1) < 0) {
+//                            finish();
+//                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+            return true;
+        }
+    };
+
+
+    int x1 = 0, x2 = 0;
+    */
 }

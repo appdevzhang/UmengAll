@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--http://blog.csdn.net/lmj623565791/article/details/24252901-->
+<resources>
+    <attr name="titleText" format="string"/>
+    <attr name="titleColor" format="color"/>
+    <attr name="titleTextSize" format="dimension"/>
+
+    <declare-styleable name="CustomerTitleView">
+        <attr name="titleText" />
+        <attr name="titleColor" />
+        <attr name="titleTextSize" />
+    </declare-styleable>
+</resources>

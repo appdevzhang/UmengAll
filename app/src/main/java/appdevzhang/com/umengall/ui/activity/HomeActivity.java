@@ -95,7 +95,7 @@ public class HomeActivity extends BaseActivity {
 //        mPushAgent.disable();//关闭客户端的通知服务
 //        mPushAgent.isEnabled();//查询通知开启状态
 
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         com.umeng.socialize.utils.Log.LOG = true;
         initUmengShare();

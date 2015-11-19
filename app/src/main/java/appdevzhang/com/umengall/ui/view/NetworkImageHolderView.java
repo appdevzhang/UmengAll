@@ -27,7 +27,7 @@ public class NetworkImageHolderView implements CBPageAdapter.Holder<String>{
 
     @Override
     public void UpdateUI(Context context, final int position, String data) {
-        imageView.setImageResource(R.drawable.ic_default_adimage);
+//        imageView.setImageResource(R.drawable.ic_default_adimage);
         RequestManager.getImageLoader().get(data,ImageLoader.getImageListener(imageView, R.drawable.ic_default_adimage, R.mipmap.ic_launcher));
 
 //        ImageLoader.getInstance().displayImage(data,imageView); Universalimageloader的使用方法
