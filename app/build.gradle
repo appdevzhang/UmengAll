@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.0"
+    buildToolsVersion '25.0.0'
 
     defaultConfig {
         applicationId "appdevzhang.com.umengall"
@@ -33,7 +33,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.0.1'
     compile files('libs/gson-2.2.4.jar')
     //umeng update
-    compile files('libs/umeng-update-v2.6.0.1.jar')
+//    compile files('libs/umeng-update-v2.6.0.1.jar')
     //umeng analytics
     compile 'com.umeng.analytics:analytics:latest.integration'
     //umeng message
@@ -42,7 +42,7 @@ dependencies {
     //view inject
     compile 'com.jakewharton:butterknife:7.0.1'
     //umeng social share
-    compile project(':social_sdk_library_project')
+//    compile project(':social_sdk_library_project')
     //convenientbanner
     compile project(':convenientbanner')
 }

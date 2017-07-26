@@ -1,1 +1,2 @@
-include ':app',':social_sdk_library_project',':convenientbanner'
+include ':app',':convenientbanner'
+//include ':app',':social_sdk_library_project',':convenientbanner'

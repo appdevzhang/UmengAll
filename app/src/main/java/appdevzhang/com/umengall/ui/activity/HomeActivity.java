@@ -4,10 +4,10 @@ import android.os.Bundle;
 
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.message.PushAgent;
-import com.umeng.socialize.bean.SHARE_MEDIA;
-import com.umeng.socialize.controller.UMServiceFactory;
-import com.umeng.socialize.controller.UMSocialService;
-import com.umeng.socialize.media.UMImage;
+//import com.umeng.socialize.bean.SHARE_MEDIA;
+//import com.umeng.socialize.controller.UMServiceFactory;
+//import com.umeng.socialize.controller.UMSocialService;
+//import com.umeng.socialize.media.UMImage;
 import com.umeng.update.UmengUpdateAgent;
 
 import appdevzhang.com.umengall.R;
@@ -17,7 +17,7 @@ import butterknife.OnClick;
 
 public class HomeActivity extends BaseActivity {
     // 首先在您的Activity中添加如下成员变量
-    final UMSocialService mController = UMServiceFactory.getUMSocialService("com.umeng.share");
+//    final UMSocialService mController = UMServiceFactory.getUMSocialService("com.umeng.share");
     @OnClick(R.id.bt_string_request)
     void goString() {
         NextPage(StringRequestActivity.class, false);
@@ -68,11 +68,11 @@ public class HomeActivity extends BaseActivity {
         UmengUpdateAgent.forceUpdate(this);
     }
 
-    @OnClick(R.id.bt_umeng_share)
-    void umengShare() {
-        // 是否只有已登录用户才能打开分享选择页
-        mController.openShare(this, false);
-    }
+//    @OnClick(R.id.bt_umeng_share)
+//    void umengShare() {
+//        // 是否只有已登录用户才能打开分享选择页
+//        mController.openShare(this, false);
+//    }
 
     @OnClick(R.id.bt_request_clear)
     void clear() {
@@ -87,7 +87,7 @@ public class HomeActivity extends BaseActivity {
         //Umeng Update
         UmengUpdateAgent.update(this);
         MobclickAgent.openActivityDurationTrack(false);
-        MobclickAgent.updateOnlineConfig(this);
+//        MobclickAgent.updateOnlineConfig(this);
         //Umeng Message
         PushAgent mPushAgent = PushAgent.getInstance(this);
         mPushAgent.onAppStart();//统计应用启动数据
@@ -97,16 +97,16 @@ public class HomeActivity extends BaseActivity {
 
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        com.umeng.socialize.utils.Log.LOG = true;
-        initUmengShare();
+//        com.umeng.socialize.utils.Log.LOG = true;
+//        initUmengShare();
     }
 
     private void initUmengShare() {
 
         // 设置分享内容
-        mController.setShareContent("友盟社会化组件（SDK）让移动应用快速整合社交分享功能，http://www.umeng.com/social");
+//        mController.setShareContent("友盟社会化组件（SDK）让移动应用快速整合社交分享功能，http://www.umeng.com/social");
         // 设置分享图片, 参数2为图片的url地址
-        mController.setShareMedia(new UMImage(this,"http://www.umeng.com/images/pic/banner_module_social.png"));
+//        mController.setShareMedia(new UMImage(this,"http://www.umeng.com/images/pic/banner_module_social.png"));
         // 设置分享图片，参数2为本地图片的资源引用
         //mController.setShareMedia(new UMImage(getActivity(), R.drawable.icon));
         // 设置分享图片，参数2为本地图片的路径(绝对路径)
@@ -127,6 +127,6 @@ public class HomeActivity extends BaseActivity {
         //umVideo.setTitle("友盟社会化分享!");
         //mController.setShareMedia(umVideo);
 
-        mController.getConfig().removePlatform( SHARE_MEDIA.RENREN, SHARE_MEDIA.DOUBAN);
+//        mController.getConfig().removePlatform( SHARE_MEDIA.RENREN, SHARE_MEDIA.DOUBAN);
     }
 }
